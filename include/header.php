@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Personal Media Library</title>
+	<title><?php echo $pageTitle; ?></title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
@@ -17,3 +17,5 @@
         </ul>
 	</div>
 </div><!-- header -->
+<!-- content -->
+<div id="content">

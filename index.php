@@ -1,6 +1,5 @@
+<?php $pageTitle = "Personal Media Library"; ?>
 <?php include 'include/header.php';?>
-	<!-- content -->
-	<div id="content">
 		<div class="section catalog random">
 			<div class="wrapper">
 				<h2>May we suggest something?</h2>
@@ -12,5 +11,4 @@
 				</ul>
 			</div><!-- wrapper -->
 		</div><!-- section catalog random -->
-	</div><!-- content -->
 <?php include 'include/footer.php';?>
