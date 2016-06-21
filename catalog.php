@@ -1,16 +1,19 @@
-<?php $pageTitle = "Full Catalog"; ?>
+<?php $pageTitle = "Full Catalog"; 
 
-<?php $name = "Full Catalog"; ?>
-
-<?php 
+      $name = "Full Catalog"; 
+	  
+ 
 	if(isset($_GET["cat"])) {
 		if($_GET["cat"] === "books") {
 		$pageTitle = "Books";
+		$section = "books";
 		
 		}else if($_GET["cat"] === "movies") {
 			$pageTitle = "Movies";
+			$section = "movies";
 		}else if($_GET["cat"] === "music") {
 			$pageTitle = "Music";
+			$section = "music";
 		}
 	}
 ?>
