@@ -1,4 +1,4 @@
-<?php include 'header.php';?>
+<?php include 'include/header.php';?>
 	<!-- content -->
 	<div id="content">
 		<div class="section catalog random">
@@ -13,4 +13,4 @@
 			</div><!-- wrapper -->
 		</div><!-- section catalog random -->
 	</div><!-- content -->
-<?php include 'footer.php';?>
+<?php include 'include/footer.php';?>
