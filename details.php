@@ -33,6 +33,12 @@ ini_set("html_errors", 1);
 
 <div class="section page">
 	<div class="wrapper">
+		<div class="breadcrumbs">
+			<a href="catalog.php">Full Catalog</a>
+			&gt; <a href="catalog.php?cat=<?php echo $item["category"]; ?>">
+			<?php echo $item["category"]; ?></a>
+			&gt; <?php echo $item["title"]; ?>
+		</div><!-- breadcrumbs -->
 		<div class="media-picture">
 			<span>
 				<img src="<?php echo $item["img"]; ?>" alt="<?php echo $item["title"]; ?>" />
@@ -75,6 +81,28 @@ ini_set("html_errors", 1);
 					<th>ISBN</th>
 					<td><?php echo $item["isbn"]; ?></td>
 				</tr>
+
+				<?php } else if (strtolower($item["category"]) === "movies") { ?>
+				<tr>
+					<th>Director</th>
+					<td><?php echo $item["director"]; ?></td>
+				</tr>
+				<tr>
+					<th>Writers</th>
+					<td><?php echo implode(", ",$item["writers"]); ?></td>
+				</tr>
+
+				<tr>
+					<th>Stars</th>
+					<td><?php echo implode(", ",$item["stars"]); ?></td>
+				</tr>
+				<?php } else if (strtolower($item["category"]) === "music") { ?>
+				<tr>
+					<th>Artist</th>
+					<td><?php echo $item["artist"]; ?></td>
+				</tr>
+
+
 
 
 				<?php } ?>
