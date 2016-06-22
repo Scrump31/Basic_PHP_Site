@@ -3,7 +3,6 @@
 <head>
 	<title><?php echo $pageTitle; ?></title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="data.php">
 </head>
 <body>
 <!-- header -->

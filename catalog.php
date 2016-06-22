@@ -22,7 +22,7 @@
 	}
 ?>
 
-<?php include 'include/header.php';?>
+<?php include("include/header.php");?>
 
 <div class="section catalog page">
 	
