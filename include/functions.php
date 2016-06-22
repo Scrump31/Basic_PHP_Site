@@ -7,4 +7,15 @@
 	        . "</a></li>";               
 		return $output;
 	}
+	
+		function array_category($catalog,$cateory) {
+			$output = array();
+			
+			foreach ($catalog as $id => $item) {
+			if (strtolower($cateory) === strtolower($item["category"])) {
+				$output[] = $id;
+			}
+		}
+			return $output;
+	}
 ?>
