@@ -9,6 +9,9 @@
 	}
 	
 		function array_category($catalog,$cateory) {
+			if ($category == null) {
+				return array_keys($catalog);
+			}
 			$output = array();
 			
 			foreach ($catalog as $id => $item) {
