@@ -35,7 +35,7 @@ ini_set("html_errors", 1);
 	<div class="wrapper">
 		<div class="breadcrumbs">
 			<a href="catalog.php">Full Catalog</a>
-			&gt; <a href="catalog.php?cat=<?php echo $item["category"]; ?>">
+			&gt; <a href="catalog.php?cat=<?php echo strtolower($item["category"]); ?>">
 			<?php echo $item["category"]; ?></a>
 			&gt; <?php echo $item["title"]; ?>
 		</div><!-- breadcrumbs -->
