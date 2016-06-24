@@ -12,4 +12,7 @@ $email_body .= "Email: " . $email . "\n";
 $email_body .= "Message: " . $submit . "\n";
 echo $email_body;
 echo "</pre>";
+
+// send email
+header("location:thanks.php");
 ?>
