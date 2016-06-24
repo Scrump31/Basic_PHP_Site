@@ -15,7 +15,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		exit;
 	}
 	
+	require("include/PHPMailer/class.phpmailer.php");
+	$mail = new PHPMailer;
 	
+	if(!$mail ->ValidateAddress($email)) {
+		echo "Invalid Email Address";
+		exit;
+	}
 	
 	echo "<pre>";
 	$email_body = "";
