@@ -1,10 +1,21 @@
 <?php 
 if($_SERVER["REQUEST_METHOD"] == "POST") {	
 		
-	$fname = $_POST["fname"];
-	$lname = $_POST["lname"];
-	$email = $_POST["email"];
-	$submit = $_POST["submit"];
+	$fname = trim(filter_input(INPUT_POST,"fname",FILTER_SANITIZE_STRING));
+	$lname = trim(filter_input(INPUT_POST,"lname",FILTER_SANITIZE_STRING));
+	$email = trim(filter_input(INPUT_POST,"email",FILTER_SANITIZE_STRING));
+	$submit = trim(filter_input(INPUT_POST,"submit",FILTER_SANITIZE_SPECIAL_CHARS));
+	
+	if($fname === "" || $lname === "" || $email === "" || $submit === "") {
+		echo "Please fill in the required fields: First Name, Last Name, Email, and Message.";
+		exit;
+	}
+	if($_POST["address"] != "") {
+		echo "Bad form input";
+		exit;
+	}
+	
+	
 	
 	echo "<pre>";
 	$email_body = "";
@@ -49,8 +60,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			  </tr>
 			  <tr>
 				  <th><label for="submit">Suggestions</label></th>
-				  <td><textarea name="submit"></textarea></td>
-			  <br> 
+				  <td><textarea name="submit"></textarea></td> 
+			  </tr>
+			  <tr style="display: none;"><!-- to catch spam bots -->
+				  <th><label for="address">Address</label></th>
+				  <td><input type="text" id="address" name="address"></td>
+				  <p>Please leave this field blank.</p>
 			  </tr>
 		  </table>
 				  <td><input type="submit" value="Submit"></td>
