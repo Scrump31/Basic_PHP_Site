@@ -23,15 +23,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		exit;
 	}
 	
-	echo "<pre>";
 	$email_body = "";
 	$email_body .= "First Name: " . $fname . "\n";
 	$email_body .= "Last Name: " . $lname . "\n";
 	$email_body .= "Email: " . $email . "\n";
 	$email_body .= "Message: " . $submit . "\n";
-	echo $email_body;
-	echo "</pre>";
 	
+	$mail->setFrom('$email', '$fname', '$lname');
+	$mail->addAddress('John@localhost.localdomain', 'John Doe');     // Add a recipient
+	
+	$mail->isHTML(false);                                  // Set email format to HTML
+	
+	$mail->Subject = 'Personal Media Library Suggestion from' .$fname .$lname;
+	$mail->Body    = $email_body;
+	
+	if(!$mail->send()) {
+	    echo 'Message could not be sent.';
+	    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	    exit;
+	} 
 	// send email
 	header("location:suggest.php?status=thanks");
 }
