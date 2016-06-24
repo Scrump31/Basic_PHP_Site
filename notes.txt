@@ -1,3 +1,0 @@
-To-Do at conclusion of basic PHP site
-- turn output_buffering back to "OFF"
-- turn display_errors back to  "OFF"

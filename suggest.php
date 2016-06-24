@@ -196,8 +196,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			  </tr>
 			  <tr style="display: none;"><!-- to catch spam bots -->
 				  <th><label for="address">Address</label></th>
+				  <td>Please leave this field blank.<td>
 				  <td><input type="text" id="address" name="address"></td>
-				  <p>Please leave this field blank.</p>
+				  
 			  </tr>
 		  </table>
 				  <td><input type="submit" value="Submit"></td>
